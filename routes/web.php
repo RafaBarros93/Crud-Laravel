@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route:: get('usuarios','UsuariosController@index');
+
+
 
 Route::group (['middleware' => 'web'],function(){
 
@@ -23,5 +25,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route:: get('clientes','ClientesController@index');
+
+Route:: get('clientes/novo','ClientesController@novo');
+
+Route:: post('clientes/salvar','ClientesController@salvar');
 
 });

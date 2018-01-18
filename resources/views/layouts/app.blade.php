@@ -35,20 +35,27 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        CRUD Rafael Codificar
-                    </a>
-                </div>
+                <ul class="nav navbar-nav">
+                <a class="navbar-brand" href="{{ url('/') }}">CRUD Rafael Codificar</a>
+                <li><a  class="navbar-brand" href="{{ url('/') }}">Home</a></li>
+                 @if (!Auth::guest())
+                            <li><a  class="navbar-brand" href="{{ url('/clientes') }}">Clientes</a></li>
+                 @endif
 
-                <a class="navbar-brand">
-                    Home
-                </a>
+               </ul> 
+
+
+               </div>
+               
+               
 
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
+            
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->

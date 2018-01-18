@@ -5,10 +5,11 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
+                <div class="panel-heading">Clientes
+                 <a class="pull-right" href="{{url('clientes/novo')}}">Novo Cliente</a>
+                </div>
                 <div class="panel-body">
-                    Você está logado!
+                    Listagem de clientes
                 </div>
             </div>
         </div>
