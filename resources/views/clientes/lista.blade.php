@@ -9,8 +9,9 @@
                  <a class="pull-right" href="{{url('clientes/novo')}}">Novo Cliente</a>
                 </div>
                 <div class="panel-body">
-                    Listagem de clientes
-                </div>
+                   {{$cliente}}
+
+                   </div>
             </div>
         </div>
     </div>
