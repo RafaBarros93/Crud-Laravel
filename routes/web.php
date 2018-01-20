@@ -17,6 +17,8 @@ Route:: get('usuarios','UsuariosController@index');
 
 
 
+
+
 Route::group (['middleware' => 'web'],function(){
 
 Route::get('/', 'HomeController@index')->name('home');
@@ -24,12 +26,12 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route:: get('clientes','ClientesController@index');
-
 Route:: get('clientes/novo','ClientesController@novo');
-
+Route:: get('clientes/{cliente}/editar','ClientesController@editar');
 Route:: post('clientes/salvar','ClientesController@salvar');
-
+Route:: patch('clientes/{cliente}','ClientesController@atualizar');
+Route:: delete('clientes/{cliente}','ClientesController@deletar');
+Route:: get('clientes/teste','VehicleController@teste');
+Route:: post('clientes/teste','VehicleController@salvar');
 });

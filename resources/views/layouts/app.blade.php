@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse bg-inverse">
             <div class="container">
                 <div class="navbar-header">
 
@@ -38,8 +38,10 @@
                 <ul class="nav navbar-nav">
                 <a class="navbar-brand" href="{{ url('/') }}">CRUD Rafael Codificar</a>
                 <li><a  class="navbar-brand" href="{{ url('/') }}">Home</a></li>
+               
                  @if (!Auth::guest())
                             <li><a  class="navbar-brand" href="{{ url('/clientes') }}">Clientes</a></li>
+                            <li><a  class="navbar-brand" href="{{ url('/clientes/teste') }}">Cadastrar Carros</a></li>
                  @endif
 
                </ul> 
@@ -63,7 +65,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('register') }}">Registrar</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

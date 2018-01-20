@@ -12,23 +12,32 @@
                    @if(Session::has ('mensagem_sucesso'))
                          <div class="alert alert-success">{{Session::get('mensagem_sucesso') }}</div>
                    @endif 
-
-
-
-                   {!!Form::open(['url'=> 'clientes/salvar'])!!}
-                   {!!Form::label('nome','Nome:')!!}
-                   {!!form::input ('text','nome','',['class'=> 'form-control','autofocus','required','placeholder'=>'Nome:'])!!} 
-                   {!!Form::label('endreco','Endereço:')!!}
-                   {!!form::input ('text','endereco','',['class'=> 'form-control','','required','placeholder'=>'Endereço:'])!!}  
-                   {!!Form::label('rua','Número:')!!}
-                   {!!form::input ('text','rua','',['class'=> 'form-control','','required','placeholder'=>'Número:'])!!} 
                    
-                    <br>
-                    {!!Form::submit('Salvar',['class' => 'btn btn-primary'])!!}
-                    </br>
-                   {!!Form::close()!!}
-       
 
+                   @if(Request::is('*/editar'))
+                        {!!Form::model($cliente, ['method' =>'PATCH','url' => 'clientes/'.$cliente->id]) !!}
+                   @else
+                      {!!Form::open(['url' => 'clientes/salvar'])!!} 
+                   @endif    
+                    
+
+                   {!!Form::open(['url'=> 'clientes/salvar','data-toggle'=>'validator' ])!!}
+                   {!!Form::label('nome','Nome:')!!}
+                   {!!form::input ('text','nome',null,['class'=> 'form-control','autofocus','required','pattern'=>'[a-zA-Z\s]+','placeholder'=>'Nome:'])!!} 
+                   {!!Form::label('endreco','Endereço:')!!}
+                   {!!form::input ('text','endereco',null,['class'=> 'form-control','','required','pattern'=>'[a-zA-Z\s]+','placeholder'=>'Endereço:'])!!}  
+                   {!!Form::label('rua','Número:')!!}
+                   {!!form::input ('number','rua',null,['class'=> 'form-control','','required','placeholder'=>'Número:'])!!} 
+                   
+                    <div class="form-group">
+                    {!!Form::submit('Salvar',['class' => 'btn btn-primary'])!!}
+                   </div>
+                 
+                   @include ('layouts.error') 
+                     
+                
+                   {!!Form::close()!!}
+                </div>
                 </div>
             </div>
         </div>
