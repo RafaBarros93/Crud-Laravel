@@ -8,7 +8,19 @@ class Cliente extends Model
 {
     protected $table ="cliente";
     
+    protected $fillable = ['id_provider', 'brand','model','year','plate','color'];
     
-    protected $fillable = ['nome', 'endereco','rua'];
+    
+    
+    public function getprovider()
+    {
+    return Provider::where('id',$this->id_provider)->first()->name;  
+   
+    }
+
+
+
+
+
 
 }

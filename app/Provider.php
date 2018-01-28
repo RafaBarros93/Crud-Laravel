@@ -9,4 +9,10 @@ class Provider extends Model
     protected $table ="provider";
     
     protected $fillable = ['name', 'city'];
+
+public function clientes ()
+{
+     return $this ->hasmany(Cliente::class);
+}
+
 }
