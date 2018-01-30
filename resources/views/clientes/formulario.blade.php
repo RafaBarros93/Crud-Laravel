@@ -15,7 +15,7 @@
                     {!!Form::open(['url' => 'clientes/salvar'])!!} 
                     @endif 
                     {!!Form::label('id_provider','Fornecedor:')!!}
-                    {!!form::input ('number','id_provider',null,['class'=> 'form-control','autofocus','pattern'=>'[a-zA-Z\s]+','placeholder'=>'Fornecedor:'])!!}
+                    {!!form::input ('number','id_provider',null,['class'=> 'form-control','autofocus','pattern'=>'[a-zA-Z\s]+','placeholder'=>'Fornecedor:','value' =>'{{getprovider()}}'])!!}
                     {!!Form::label('brand','Marca:')!!} {!!form::input ('text','brand',null,['class'=> 'form-control','autofocus','pattern'=>'[a-zA-Z\s]+','placeholder'=>'Modelo:'])!!}
                     {!!Form::label('model','Modelo:')!!} {!!form::input ('text','model',null,['class'=> 'form-control','autofocus','placeholder'=>'Modelo'])!!} 
                     {!!Form::label('year','Ano do Modelo:')!!} {!!form::input ('number','year',null,['class'=> 'form-control','placeholder'=>'Ano do modelo:'])!!} 
