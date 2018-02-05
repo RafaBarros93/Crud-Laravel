@@ -36,12 +36,12 @@
 
                     <!-- Branding Image -->
                 <ul class="nav navbar-nav">
-                <a class="navbar-brand" href="{{ url('/') }}">CRUD Rafael Codificar</a>
+                <a class="navbar-brand" href="{{ url('/') }}">Sistema de cadastro de carros</a>
                 <li><a  class="navbar-brand" href="{{ url('/') }}">Home</a></li>
                
                  @if (!Auth::guest())
-                            <li><a  class="navbar-brand" href="{{ url('/clientes') }}">Clientes</a></li>
-                            <li><a  class="navbar-brand" href="{{ url('/clientes/teste') }}">Cadastrar Carros</a></li>
+                            <li><a  class="navbar-brand" href="{{ url('/clientes') }}">Cadastrar Carros</a></li>
+                            
                  @endif
 
                </ul> 

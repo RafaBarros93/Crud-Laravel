@@ -10,7 +10,8 @@
                     @if(Session::has ('mensagem_sucesso'))
                     <div class="alert alert-success">{{Session::get('mensagem_sucesso') }}</div>
                     @endif
-                    <table class="table">
+
+                    <table class="table table-bordered">
                         <th>Fornecedor</th>
                         <th>Marca</th>
                         <th>Modelo</th>
@@ -18,7 +19,7 @@
                         <th>Placa</th>
                         <th>Cor do Véiculo</th>
                         <th>Ações</th>
-                        <th></th>
+
 
                         <tbody>
                             @foreach($clientes as $cliente)
@@ -40,8 +41,11 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{$clientes->links()}}
                 </div>
+
             </div>
+
         </div>
     </div>
 </div>

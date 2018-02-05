@@ -35,6 +35,7 @@ Route:: post('clientes/salvar','ClientesController@salvar');
 Route:: patch('clientes/{cliente}','ClientesController@atualizar');
 Route:: delete('clientes/{cliente}','ClientesController@deletar');
 Route:: post('clientes','ClientesController@provider');
+Route:: get('clientes/lista','ClientesController@lista');
 
 
 });

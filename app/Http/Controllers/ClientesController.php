@@ -13,14 +13,16 @@ class ClientesController extends Controller
     
     public function index()
     {
-         $clientes = Cliente::get();
+         $clientes = Cliente::paginate(10);
+         
 
-        // $clientes = Cliente::table('cliente')->paginate(10);
-        
-         return view('clientes.lista',['clientes' => $clientes]);
+         $cliente = $clientes;
+         return view('clientes.lista',['clientes' => $cliente]);
+    
+    
     }
     
-    
+        
     public function novo()
     {
           return view('clientes.formulario');
@@ -74,7 +76,7 @@ class ClientesController extends Controller
 
 
     public function deletar($id)
-  {
+    {
     $cliente = Cliente::findOrFail($id);
 
     $cliente->delete();
